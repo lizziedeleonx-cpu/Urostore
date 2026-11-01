@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UROSTORE | Tienda Digital</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #080b14;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 20px;
+      background: #101827;
+      border-bottom: 1px solid #27334b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 24px; font-weight: bold; color: #49d8ff; }
+    .hero { padding: 50px 20px; text-align: center; }
+    .hero h1 { font-size: 32px; }
+    .hero p { color: #a8b4ca; }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .product {
+      background: #111a2b;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #25344d;
+    }
+    .product button {
+      width: 100%;
+      padding: 12px;
+      border: 0;
+      border-radius: 8px;
+      background: #49d8ff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">UROSTORE</div>
+    <div>🎮 Tienda Digital</div>
+  </header>
+
+  <section class="hero">
+    <h1>Tu próximo nivel comienza aquí</h1>
+    <p>Streaming, recargas y juegos digitales.</p>
+  </section>
+
+  <section class="products">
+    <article class="product">
+      <h3>Netflix Premium</h3>
+      <p>Streaming</p>
+      <button onclick="comprar('Netflix Premium')">Comprar</button>
+    </article>
+
+    <article class="product">
+      <h3>GTA V</h3>
+      <p>PlayStation 5</p>
+      <button onclick="comprar('GTA V PS5')">Comprar</button>
+    </article>
+
+    <article class="product">
+      <h3>Spotify Premium</h3>
+      <p>Streaming</p>
+      <button onclick="comprar('Spotify Premium')">Comprar</button>
+    </article>
+  </section>
+
+  <script>
+    function comprar(producto) {
+      const numeros = ['584122080464', '584242791737'];
+      const numero = numeros[Math.floor(Math.random() * numeros.length)];
+      const mensaje = `Hola, quiero comprar ${producto} en UROSTORE. ¿Está disponible?`;
+      window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
